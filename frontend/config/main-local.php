@@ -40,6 +40,23 @@ $config = [
             // for the mailer to send real emails.
             'useFileTransport' => true,
         ],
+        'assetManager' => [
+            // uncomment the following line if you want to auto update your assets (unix hosting only)
+            //'linkAssets' => true,
+            'bundles' => [
+                'yii\web\JqueryAsset' => [
+                    'js' => [YII_DEBUG ? 'jquery.js' : 'jquery.min.js'],
+                ],
+                'yii\bootstrap\BootstrapAsset' => [
+                    'css' => [],
+                    'cssOptions'=>['async'=>'async']
+                ],
+                'yii\bootstrap\BootstrapPluginAsset' => [
+                    'js' => [],
+                    'jsOptions'=>['async'=>'async']
+                ],
+            ],
+        ],
     ],
 ];
 
