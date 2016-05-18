@@ -1,0 +1,7 @@
+RewriteEngine on
+
+RewriteBase /
+
+RewriteRule ^admin(/.+)?$ /backend/web/$1 [L,PT]
+RewriteRule ^(admin)/$ /$1 [L,R=301]
+RewriteRule ^(.+)?$ frontend/web/$1

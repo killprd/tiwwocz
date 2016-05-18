@@ -1,0 +1,595 @@
+2016-05-18 09:27:22 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php:600
+Stack trace:
+#0 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(600): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(542): yii\db\Connection->createPdoInstance()
+#2 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(861): yii\db\Connection->open()
+#3 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(848): yii\db\Connection->getMasterPdo()
+#4 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(219): yii\db\Connection->getSlavePdo()
+#5 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(894): yii\db\Command->prepare(true)
+#6 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#8 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Schema.php(149): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/MigrateController.php(178): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#11 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(627): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#12 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(102): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#13 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#14 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#15 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#16 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Controller.php(119): yii\base\Controller->runAction('', Array)
+#17 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Module.php(454): yii\console\Controller->runAction('', Array)
+#18 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(176): yii\base\Module->runAction('migrate', Array)
+#19 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('migrate', Array)
+#20 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#21 /Applications/MAMP/htdocs/tiwwo/yii(27): yii\base\Application->run()
+#22 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php:547
+Stack trace:
+#0 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(861): yii\db\Connection->open()
+#1 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(848): yii\db\Connection->getMasterPdo()
+#2 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(219): yii\db\Connection->getSlavePdo()
+#3 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(894): yii\db\Command->prepare(true)
+#4 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#6 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Schema.php(149): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/MigrateController.php(178): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#9 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(627): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#10 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(102): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#11 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#12 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#13 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#14 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Controller.php(119): yii\base\Controller->runAction('', Array)
+#15 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Module.php(454): yii\console\Controller->runAction('', Array)
+#16 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(176): yii\base\Module->runAction('migrate', Array)
+#17 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('migrate', Array)
+#18 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#19 /Applications/MAMP/htdocs/tiwwo/yii(27): yii\base\Application->run()
+#20 {main}
+Additional Information:
+
+2016-05-18 09:27:22 [-][-][-][info][application] $_SERVER = [
+    'TERM_PROGRAM' => 'Apple_Terminal'
+    'SHELL' => '/bin/bash'
+    'TERM' => 'xterm-256color'
+    'TMPDIR' => '/var/folders/42/jhp8vsyd5_gb17nm270chk8h0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.kJzBJkCeZp/Render'
+    'TERM_PROGRAM_VERSION' => '361.1'
+    'TERM_SESSION_ID' => '49490127-FDD7-4379-AEC1-18E17B615713'
+    'USER' => 'vlastimilhak'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.jLqNXnDMma/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x1D:0x38'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/Ghostscript/bin:/opt/ImageMagick/bin'
+    'PWD' => '/Applications/MAMP/htdocs/tiwwo'
+    'LANG' => 'cs_CZ.UTF-8'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/vlastimilhak'
+    'LOGNAME' => 'vlastimilhak'
+    '_' => './yii'
+    'OLDPWD' => '/Users/vlastimilhak'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1463563642.1034
+    'REQUEST_TIME' => 1463563642
+    'argv' => [
+        0 => './yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2016-05-18 09:28:08 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php:600
+Stack trace:
+#0 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(600): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(542): yii\db\Connection->createPdoInstance()
+#2 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(861): yii\db\Connection->open()
+#3 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(848): yii\db\Connection->getMasterPdo()
+#4 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(219): yii\db\Connection->getSlavePdo()
+#5 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(894): yii\db\Command->prepare(true)
+#6 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#8 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Schema.php(149): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/MigrateController.php(178): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#11 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(627): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#12 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(102): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#13 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#14 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#15 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#16 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Controller.php(119): yii\base\Controller->runAction('', Array)
+#17 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Module.php(454): yii\console\Controller->runAction('', Array)
+#18 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(176): yii\base\Module->runAction('migrate', Array)
+#19 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('migrate', Array)
+#20 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#21 /Applications/MAMP/htdocs/tiwwo/yii(27): yii\base\Application->run()
+#22 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php:547
+Stack trace:
+#0 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(861): yii\db\Connection->open()
+#1 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(848): yii\db\Connection->getMasterPdo()
+#2 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(219): yii\db\Connection->getSlavePdo()
+#3 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(894): yii\db\Command->prepare(true)
+#4 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#6 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Schema.php(149): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/MigrateController.php(178): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#9 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(627): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#10 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(102): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#11 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#12 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#13 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#14 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Controller.php(119): yii\base\Controller->runAction('', Array)
+#15 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Module.php(454): yii\console\Controller->runAction('', Array)
+#16 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(176): yii\base\Module->runAction('migrate', Array)
+#17 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('migrate', Array)
+#18 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#19 /Applications/MAMP/htdocs/tiwwo/yii(27): yii\base\Application->run()
+#20 {main}
+Additional Information:
+
+2016-05-18 09:28:08 [-][-][-][info][application] $_SERVER = [
+    'TERM_PROGRAM' => 'Apple_Terminal'
+    'SHELL' => '/bin/bash'
+    'TERM' => 'xterm-256color'
+    'TMPDIR' => '/var/folders/42/jhp8vsyd5_gb17nm270chk8h0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.kJzBJkCeZp/Render'
+    'TERM_PROGRAM_VERSION' => '361.1'
+    'TERM_SESSION_ID' => '49490127-FDD7-4379-AEC1-18E17B615713'
+    'USER' => 'vlastimilhak'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.jLqNXnDMma/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x1D:0x38'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/Ghostscript/bin:/opt/ImageMagick/bin'
+    'PWD' => '/Applications/MAMP/htdocs/tiwwo'
+    'LANG' => 'cs_CZ.UTF-8'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/vlastimilhak'
+    'LOGNAME' => 'vlastimilhak'
+    '_' => './yii'
+    'OLDPWD' => '/Users/vlastimilhak'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1463563688.3707
+    'REQUEST_TIME' => 1463563688
+    'argv' => [
+        0 => './yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2016-05-18 09:28:43 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php:600
+Stack trace:
+#0 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(600): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(542): yii\db\Connection->createPdoInstance()
+#2 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(861): yii\db\Connection->open()
+#3 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(848): yii\db\Connection->getMasterPdo()
+#4 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(219): yii\db\Connection->getSlavePdo()
+#5 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(894): yii\db\Command->prepare(true)
+#6 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#8 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Schema.php(149): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/MigrateController.php(178): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#11 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(627): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#12 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(102): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#13 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#14 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#15 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#16 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Controller.php(119): yii\base\Controller->runAction('', Array)
+#17 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Module.php(454): yii\console\Controller->runAction('', Array)
+#18 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(176): yii\base\Module->runAction('migrate', Array)
+#19 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('migrate', Array)
+#20 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#21 /Applications/MAMP/htdocs/tiwwo/yii(27): yii\base\Application->run()
+#22 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php:547
+Stack trace:
+#0 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(861): yii\db\Connection->open()
+#1 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(848): yii\db\Connection->getMasterPdo()
+#2 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(219): yii\db\Connection->getSlavePdo()
+#3 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(894): yii\db\Command->prepare(true)
+#4 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#6 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Schema.php(149): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/MigrateController.php(178): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#9 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(627): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#10 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(102): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#11 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#12 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#13 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#14 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Controller.php(119): yii\base\Controller->runAction('', Array)
+#15 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Module.php(454): yii\console\Controller->runAction('', Array)
+#16 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(176): yii\base\Module->runAction('migrate', Array)
+#17 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('migrate', Array)
+#18 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#19 /Applications/MAMP/htdocs/tiwwo/yii(27): yii\base\Application->run()
+#20 {main}
+Additional Information:
+
+2016-05-18 09:28:43 [-][-][-][info][application] $_SERVER = [
+    'TERM_PROGRAM' => 'Apple_Terminal'
+    'SHELL' => '/bin/bash'
+    'TERM' => 'xterm-256color'
+    'TMPDIR' => '/var/folders/42/jhp8vsyd5_gb17nm270chk8h0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.kJzBJkCeZp/Render'
+    'TERM_PROGRAM_VERSION' => '361.1'
+    'TERM_SESSION_ID' => '49490127-FDD7-4379-AEC1-18E17B615713'
+    'USER' => 'vlastimilhak'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.jLqNXnDMma/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x1D:0x38'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/Ghostscript/bin:/opt/ImageMagick/bin'
+    'PWD' => '/Applications/MAMP/htdocs/tiwwo'
+    'LANG' => 'cs_CZ.UTF-8'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/vlastimilhak'
+    'LOGNAME' => 'vlastimilhak'
+    '_' => './yii'
+    'OLDPWD' => '/Users/vlastimilhak'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1463563723.7728
+    'REQUEST_TIME' => 1463563723
+    'argv' => [
+        0 => './yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2016-05-18 09:33:45 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php:600
+Stack trace:
+#0 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(600): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(542): yii\db\Connection->createPdoInstance()
+#2 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(861): yii\db\Connection->open()
+#3 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(848): yii\db\Connection->getMasterPdo()
+#4 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(219): yii\db\Connection->getSlavePdo()
+#5 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(894): yii\db\Command->prepare(true)
+#6 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#8 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Schema.php(149): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/MigrateController.php(178): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#11 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(627): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#12 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(102): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#13 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#14 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#15 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#16 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Controller.php(119): yii\base\Controller->runAction('', Array)
+#17 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Module.php(454): yii\console\Controller->runAction('', Array)
+#18 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(176): yii\base\Module->runAction('migrate', Array)
+#19 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('migrate', Array)
+#20 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#21 /Applications/MAMP/htdocs/tiwwo/yii(27): yii\base\Application->run()
+#22 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php:547
+Stack trace:
+#0 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(861): yii\db\Connection->open()
+#1 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(848): yii\db\Connection->getMasterPdo()
+#2 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(219): yii\db\Connection->getSlavePdo()
+#3 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(894): yii\db\Command->prepare(true)
+#4 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#6 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Schema.php(149): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/MigrateController.php(178): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#9 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(627): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#10 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(102): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#11 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#12 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#13 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#14 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Controller.php(119): yii\base\Controller->runAction('', Array)
+#15 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Module.php(454): yii\console\Controller->runAction('', Array)
+#16 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(176): yii\base\Module->runAction('migrate', Array)
+#17 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('migrate', Array)
+#18 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#19 /Applications/MAMP/htdocs/tiwwo/yii(27): yii\base\Application->run()
+#20 {main}
+Additional Information:
+
+2016-05-18 09:33:45 [-][-][-][info][application] $_SERVER = [
+    'TERM_PROGRAM' => 'Apple_Terminal'
+    'SHELL' => '/bin/bash'
+    'TERM' => 'xterm-256color'
+    'TMPDIR' => '/var/folders/42/jhp8vsyd5_gb17nm270chk8h0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.kJzBJkCeZp/Render'
+    'TERM_PROGRAM_VERSION' => '361.1'
+    'TERM_SESSION_ID' => '49490127-FDD7-4379-AEC1-18E17B615713'
+    'USER' => 'vlastimilhak'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.jLqNXnDMma/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x1D:0x38'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/Ghostscript/bin:/opt/ImageMagick/bin'
+    'PWD' => '/Applications/MAMP/htdocs/tiwwo'
+    'LANG' => 'cs_CZ.UTF-8'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/vlastimilhak'
+    'LOGNAME' => 'vlastimilhak'
+    '_' => '/Applications/MAMP/htdocs/tiwwo/yii'
+    'OLDPWD' => '/Users/vlastimilhak'
+    'PHP_SELF' => '/Applications/MAMP/htdocs/tiwwo/yii'
+    'SCRIPT_NAME' => '/Applications/MAMP/htdocs/tiwwo/yii'
+    'SCRIPT_FILENAME' => '/Applications/MAMP/htdocs/tiwwo/yii'
+    'PATH_TRANSLATED' => '/Applications/MAMP/htdocs/tiwwo/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1463564025.3501
+    'REQUEST_TIME' => 1463564025
+    'argv' => [
+        0 => '/Applications/MAMP/htdocs/tiwwo/yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2016-05-18 09:36:11 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php:600
+Stack trace:
+#0 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(600): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(542): yii\db\Connection->createPdoInstance()
+#2 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(861): yii\db\Connection->open()
+#3 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(848): yii\db\Connection->getMasterPdo()
+#4 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(219): yii\db\Connection->getSlavePdo()
+#5 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(894): yii\db\Command->prepare(true)
+#6 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#8 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Schema.php(149): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/MigrateController.php(178): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#11 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(627): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#12 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(102): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#13 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#14 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#15 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#16 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Controller.php(119): yii\base\Controller->runAction('', Array)
+#17 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Module.php(454): yii\console\Controller->runAction('', Array)
+#18 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(176): yii\base\Module->runAction('migrate', Array)
+#19 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('migrate', Array)
+#20 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#21 /Applications/MAMP/htdocs/tiwwo/yii(27): yii\base\Application->run()
+#22 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php:547
+Stack trace:
+#0 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(861): yii\db\Connection->open()
+#1 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(848): yii\db\Connection->getMasterPdo()
+#2 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(219): yii\db\Connection->getSlavePdo()
+#3 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(894): yii\db\Command->prepare(true)
+#4 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#6 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Schema.php(149): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/MigrateController.php(178): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#9 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(627): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#10 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(102): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#11 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#12 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#13 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#14 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Controller.php(119): yii\base\Controller->runAction('', Array)
+#15 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Module.php(454): yii\console\Controller->runAction('', Array)
+#16 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(176): yii\base\Module->runAction('migrate', Array)
+#17 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('migrate', Array)
+#18 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#19 /Applications/MAMP/htdocs/tiwwo/yii(27): yii\base\Application->run()
+#20 {main}
+Additional Information:
+
+2016-05-18 09:36:11 [-][-][-][info][application] $_SERVER = [
+    'TERM_PROGRAM' => 'Apple_Terminal'
+    'SHELL' => '/bin/bash'
+    'TERM' => 'xterm-256color'
+    'TMPDIR' => '/var/folders/42/jhp8vsyd5_gb17nm270chk8h0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.kJzBJkCeZp/Render'
+    'TERM_PROGRAM_VERSION' => '361.1'
+    'TERM_SESSION_ID' => '49490127-FDD7-4379-AEC1-18E17B615713'
+    'USER' => 'vlastimilhak'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.jLqNXnDMma/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x1D:0x38'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/Ghostscript/bin:/opt/ImageMagick/bin'
+    'PWD' => '/Applications/MAMP/htdocs/tiwwo'
+    'LANG' => 'cs_CZ.UTF-8'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/vlastimilhak'
+    'LOGNAME' => 'vlastimilhak'
+    '_' => '/Applications/MAMP/htdocs/tiwwo/yii'
+    'OLDPWD' => '/Users/vlastimilhak'
+    'PHP_SELF' => '/Applications/MAMP/htdocs/tiwwo/yii'
+    'SCRIPT_NAME' => '/Applications/MAMP/htdocs/tiwwo/yii'
+    'SCRIPT_FILENAME' => '/Applications/MAMP/htdocs/tiwwo/yii'
+    'PATH_TRANSLATED' => '/Applications/MAMP/htdocs/tiwwo/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1463564171.5611
+    'REQUEST_TIME' => 1463564171
+    'argv' => [
+        0 => '/Applications/MAMP/htdocs/tiwwo/yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2016-05-18 09:36:43 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php:600
+Stack trace:
+#0 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(600): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(542): yii\db\Connection->createPdoInstance()
+#2 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(861): yii\db\Connection->open()
+#3 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(848): yii\db\Connection->getMasterPdo()
+#4 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(219): yii\db\Connection->getSlavePdo()
+#5 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(894): yii\db\Command->prepare(true)
+#6 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#8 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Schema.php(149): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/MigrateController.php(178): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#11 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(627): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#12 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(102): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#13 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#14 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#15 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#16 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Controller.php(119): yii\base\Controller->runAction('', Array)
+#17 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Module.php(454): yii\console\Controller->runAction('', Array)
+#18 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(176): yii\base\Module->runAction('migrate', Array)
+#19 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('migrate', Array)
+#20 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#21 /Applications/MAMP/htdocs/tiwwo/yii(27): yii\base\Application->run()
+#22 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php:547
+Stack trace:
+#0 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(861): yii\db\Connection->open()
+#1 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(848): yii\db\Connection->getMasterPdo()
+#2 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(219): yii\db\Connection->getSlavePdo()
+#3 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(894): yii\db\Command->prepare(true)
+#4 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#6 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Schema.php(149): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/MigrateController.php(178): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#9 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(627): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#10 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(102): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#11 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#12 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#13 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#14 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Controller.php(119): yii\base\Controller->runAction('', Array)
+#15 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Module.php(454): yii\console\Controller->runAction('', Array)
+#16 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(176): yii\base\Module->runAction('migrate', Array)
+#17 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('migrate', Array)
+#18 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#19 /Applications/MAMP/htdocs/tiwwo/yii(27): yii\base\Application->run()
+#20 {main}
+Additional Information:
+
+2016-05-18 09:36:43 [-][-][-][info][application] $_SERVER = [
+    'TERM_PROGRAM' => 'Apple_Terminal'
+    'SHELL' => '/bin/bash'
+    'TERM' => 'xterm-256color'
+    'TMPDIR' => '/var/folders/42/jhp8vsyd5_gb17nm270chk8h0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.kJzBJkCeZp/Render'
+    'TERM_PROGRAM_VERSION' => '361.1'
+    'TERM_SESSION_ID' => '49490127-FDD7-4379-AEC1-18E17B615713'
+    'USER' => 'vlastimilhak'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.jLqNXnDMma/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x1D:0x38'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/Ghostscript/bin:/opt/ImageMagick/bin'
+    'PWD' => '/Applications/MAMP/htdocs/tiwwo'
+    'LANG' => 'cs_CZ.UTF-8'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/vlastimilhak'
+    'LOGNAME' => 'vlastimilhak'
+    '_' => '/Applications/MAMP/htdocs/tiwwo/yii'
+    'OLDPWD' => '/Users/vlastimilhak'
+    'PHP_SELF' => '/Applications/MAMP/htdocs/tiwwo/yii'
+    'SCRIPT_NAME' => '/Applications/MAMP/htdocs/tiwwo/yii'
+    'SCRIPT_FILENAME' => '/Applications/MAMP/htdocs/tiwwo/yii'
+    'PATH_TRANSLATED' => '/Applications/MAMP/htdocs/tiwwo/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1463564203.3434
+    'REQUEST_TIME' => 1463564203
+    'argv' => [
+        0 => '/Applications/MAMP/htdocs/tiwwo/yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2016-05-18 09:36:45 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php:600
+Stack trace:
+#0 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(600): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(542): yii\db\Connection->createPdoInstance()
+#2 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(861): yii\db\Connection->open()
+#3 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(848): yii\db\Connection->getMasterPdo()
+#4 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(219): yii\db\Connection->getSlavePdo()
+#5 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(894): yii\db\Command->prepare(true)
+#6 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#8 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Schema.php(149): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/MigrateController.php(178): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#11 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(627): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#12 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(102): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#13 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#14 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#15 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#16 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Controller.php(119): yii\base\Controller->runAction('', Array)
+#17 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Module.php(454): yii\console\Controller->runAction('', Array)
+#18 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(176): yii\base\Module->runAction('migrate', Array)
+#19 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('migrate', Array)
+#20 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#21 /Applications/MAMP/htdocs/tiwwo/yii(27): yii\base\Application->run()
+#22 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php:547
+Stack trace:
+#0 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(861): yii\db\Connection->open()
+#1 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Connection.php(848): yii\db\Connection->getMasterPdo()
+#2 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(219): yii\db\Connection->getSlavePdo()
+#3 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(894): yii\db\Command->prepare(true)
+#4 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#6 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/db/Schema.php(149): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/MigrateController.php(178): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#9 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(627): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#10 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(102): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#11 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#12 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#13 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#14 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Controller.php(119): yii\base\Controller->runAction('', Array)
+#15 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Module.php(454): yii\console\Controller->runAction('', Array)
+#16 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(176): yii\base\Module->runAction('migrate', Array)
+#17 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('migrate', Array)
+#18 /Applications/MAMP/htdocs/tiwwo/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#19 /Applications/MAMP/htdocs/tiwwo/yii(27): yii\base\Application->run()
+#20 {main}
+Additional Information:
+
+2016-05-18 09:36:45 [-][-][-][info][application] $_SERVER = [
+    'TERM_PROGRAM' => 'Apple_Terminal'
+    'SHELL' => '/bin/bash'
+    'TERM' => 'xterm-256color'
+    'TMPDIR' => '/var/folders/42/jhp8vsyd5_gb17nm270chk8h0000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.kJzBJkCeZp/Render'
+    'TERM_PROGRAM_VERSION' => '361.1'
+    'TERM_SESSION_ID' => '49490127-FDD7-4379-AEC1-18E17B615713'
+    'USER' => 'vlastimilhak'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.jLqNXnDMma/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x1D:0x38'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/Ghostscript/bin:/opt/ImageMagick/bin'
+    'PWD' => '/Applications/MAMP/htdocs/tiwwo'
+    'LANG' => 'cs_CZ.UTF-8'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/vlastimilhak'
+    'LOGNAME' => 'vlastimilhak'
+    '_' => '/Applications/MAMP/htdocs/tiwwo/yii'
+    'OLDPWD' => '/Users/vlastimilhak'
+    'PHP_SELF' => '/Applications/MAMP/htdocs/tiwwo/yii'
+    'SCRIPT_NAME' => '/Applications/MAMP/htdocs/tiwwo/yii'
+    'SCRIPT_FILENAME' => '/Applications/MAMP/htdocs/tiwwo/yii'
+    'PATH_TRANSLATED' => '/Applications/MAMP/htdocs/tiwwo/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1463564205.7006
+    'REQUEST_TIME' => 1463564205
+    'argv' => [
+        0 => '/Applications/MAMP/htdocs/tiwwo/yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
