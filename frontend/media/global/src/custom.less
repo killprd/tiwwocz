@@ -1,0 +1,59 @@
+@import url(bootstrap.less);
+@import url(bootstrap-extend.less);
+@import url(vars.less);
+@import url(site.less);
+
+
+
+body{
+	background: #f1f5f6;
+}
+.site-navbar ol.breadcrumb{
+	display: inline-block;
+}
+.subpage{
+	
+	.site-navbar{
+		background: rgba(0,0,0,0);
+		box-shadow: none;
+		.navbar-container{
+			background: #f1f5f6;
+		}
+	}
+	.site-menubar{
+		box-shadow: none;
+		top:0;
+		z-index: 1501;
+		height: 100%;
+		background: #ffffff;
+		.site-menu > .site-menu-item.active,
+		.site-menu > .site-menu-item.open > a,
+		.site-menu .site-menu-sub{
+			background: #ffffff;
+		}
+		a,a:hover{
+			color: #2b3034;
+		}
+		.site-menu > .site-menu-item.active > a,
+		.site-menu > .site-menu-item.hover > a, .site-menu > .site-menu-item:hover > a
+		.site-menu .site-menu-sub .site-menu-item.hover > a, .site-menu .site-menu-sub .site-menu-item:hover > a{
+			color: #2b3034;
+		}
+	}
+	.site-menubar-footer{
+		display: none;
+	}
+	.site-menubar-body{
+		height: 100%;
+	}
+	.block_profile--title{
+		padding: 25px 15px;
+		color: #000;
+		font-size: 24px;
+		font-weight: bold;
+	}
+	
+}
+
+
+
