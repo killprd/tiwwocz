@@ -57,4 +57,13 @@ return array (
       '@yii/faker' => $vendorDir . '/yiisoft/yii2-faker',
     ),
   ),
+  'alfa6661/yii2-raty' => 
+  array (
+    'name' => 'alfa6661/yii2-raty',
+    'version' => '1.0.0.0',
+    'alias' => 
+    array (
+      '@alfa6661/widgets' => $vendorDir . '/alfa6661/yii2-raty',
+    ),
+  ),
 );

@@ -6,5 +6,7 @@
             "email": "vlastik@softwarovyservis.com"
         }
     ],
-    "require": {}
+    "require": {
+        "alfa6661/yii2-raty": "*"
+    }
 }

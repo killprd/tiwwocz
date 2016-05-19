@@ -25,6 +25,22 @@ for($i=0;$i<=10;$i++){
             </div>
 
             <div class="clearfix"></div>
+            <div class="margin-bottom-10 col-sm-12">
+
+            <?= \alfa6661\widgets\Raty::widget([
+                'name' => 'user-vote',
+                'options' => [
+                    // the HTML attributes for the widget container
+                ],
+                'pluginOptions' => [
+                    // the options for the underlying jQuery Raty plugin
+                    // see : https://github.com/wbotelhos/raty#options
+                ]
+            ]); ?>
+
+
+            </div>
+            <div class="clearfix"></div>
         </div>
         <div class="clearfix"></div>
     </div>

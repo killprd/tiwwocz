@@ -70,7 +70,6 @@ Breakpoints();
   <script src="<?=$assets->baseUrl?>/global/js/configs/config-colors.js"></script>
   <script src="<?=$assets->baseUrl?>/assets/js/configs/config-tour.js"></script>
   <script src="<?=$assets->baseUrl?>/global/js/components/asscrollable.js"></script>
-  <script src="<?=$assets->baseUrl?>/global/js/components/animsition.js"></script>
   <script src="<?=$assets->baseUrl?>/global/js/components/slidepanel.js"></script>
   <script src="<?=$assets->baseUrl?>/global/js/components/switchery.js"></script>
   <script>

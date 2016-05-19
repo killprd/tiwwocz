@@ -27,6 +27,10 @@ class ComposerStaticInitb6e4f4c7f1d0f56a801d96c1453bb097
         array (
             'cebe\\markdown\\' => 14,
         ),
+        'a' => 
+        array (
+            'alfa6661\\widgets\\' => 17,
+        ),
         'F' => 
         array (
             'Faker\\' => 6,
@@ -69,6 +73,10 @@ class ComposerStaticInitb6e4f4c7f1d0f56a801d96c1453bb097
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
+        ),
+        'alfa6661\\widgets\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/alfa6661/yii2-raty',
         ),
         'Faker\\' => 
         array (

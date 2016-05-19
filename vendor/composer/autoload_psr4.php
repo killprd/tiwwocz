@@ -15,5 +15,6 @@ return array(
     'yii\\bootstrap\\' => array($vendorDir . '/yiisoft/yii2-bootstrap'),
     'yii\\' => array($vendorDir . '/yiisoft/yii2'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
+    'alfa6661\\widgets\\' => array($vendorDir . '/alfa6661/yii2-raty'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
 );
