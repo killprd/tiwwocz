@@ -18,7 +18,7 @@ for($i=0;$i<=10;$i++){
                 </div>
             </div>
             <div class="block_item--title col-sm-12">
-                <a href="" >Soukromý průvodce liberecem</a>
+                <a href="" >Soukromý průvodce libercem<br/>Vlastimil Hak</a>
             </div>
             <div class="block_item--description col-sm-12">
                Vítr skoro nefouká a tak by se na první pohled mohlo zdát, že se balónky snad vůbec nepohybují.
@@ -40,7 +40,30 @@ for($i=0;$i<=10;$i++){
 
 
             </div>
+            <div class="block_item--listday col-sm-12">
+                <small>Vícedenní výlet</small>
+            
+                <small class="days">Po</small> - <small class="days">Pá</small>
+            </div>
+
+
             <div class="clearfix"></div>
+            <hr/>
+            <div class="clearfix"></div>
+
+            <div class="col-sm-7 block_item--info">
+                <small>Cena za skupnu</small>
+                <div class="clearfix"></div>
+                <small>od:</small>250 $ 
+            </div>
+            <div class="col-sm-5 block_item--status">
+                <small>Doba trvání</small>
+                <div class="clearfix"></div>
+                48 Hod.
+            </div>
+            <div class="margin-bottom-10 col-sm-12"></div>
+            <div class="clearfix"></div>
+
         </div>
         <div class="clearfix"></div>
     </div>

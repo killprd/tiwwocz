@@ -14,7 +14,7 @@ module.exports = function(grunt) {
            options: {
                paths: ["assets/css"]
            },
-           files: {"../assets/css/maine.css": "src/custom.less"}
+           files: {"../../web/assets/d00f2586/assets/css/maine.css": "src/custom.less"}
        },
        production: {
            options: {
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
         tasks: ['default'],
       },
       styles: {
-        files: ['src/less/**/*.less','src/custom.less','src/vendor/**/*.less'], // which files to watch
+        files: ['**/*.less'], // which files to watch
         tasks: ['less'],
         options: {
           nospawn: true

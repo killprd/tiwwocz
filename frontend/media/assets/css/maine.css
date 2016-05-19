@@ -14683,7 +14683,16 @@ body {
   font-weight: 400;
   color: #526069;
 }
+.subpage .block_item .block_item--listday .days {
+  background-color: #46be8a;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+}
 .subpage .block_item .block_item--description {
   padding-bottom: 15px;
   font-size: 12px;
+}
+.subpage .block_item hr {
+  margin: 5px 0;
 }
