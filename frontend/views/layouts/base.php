@@ -48,6 +48,7 @@ $assets = AppAsset::register($this);
   </footer>
 
 
+<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
 
 
 <?php $this->endBody() ?>
