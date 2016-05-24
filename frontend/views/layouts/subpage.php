@@ -34,7 +34,10 @@ $this->registerJs('$(document).on("pjax:timeout", function(event) {
   event.preventDefault()
 });');   
 ?>
-
+<style>
+     
+    @import url(<?= $assets->baseUrl?>/assets/css/maine.css);
+</style>
 <!--[if lt IE 9]>
     <script src="<?=$assets->baseUrl?>/global/vendor/html5shiv/html5shiv.min.js"></script>
     <![endif]-->
@@ -81,5 +84,6 @@ Breakpoints();
     });
   })(document, window, jQuery);
   </script>
+
 <?php $this->endContent(); ?>
 

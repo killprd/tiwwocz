@@ -14,14 +14,14 @@ module.exports = function(grunt) {
            options: {
                paths: ["assets/css"]
            },
-           files: {"../../web/assets/d00f2586/assets/css/maine.css": "src/custom.less"}
+           files: {"../../web/assets/d00f2586/assets/css/hp.css": "src/homepage.less"}
        },
        production: {
            options: {
                paths: ["assets/css"],
                cleancss: true
            },
-           files: {"../assets/css/maine.css": "src/custom.less"}
+           files: {"../assets/css/hp.css": "src/homepage.less"}
        }
     },
     uglify: {
@@ -29,6 +29,17 @@ module.exports = function(grunt) {
         src: '../assets/js/build.js',
         dest: '../assets/js/build.min.js'
       }     
+    },
+    cssmin: {
+      target: {
+        files: [{
+          expand: true,
+          cwd: '../../web/assets/d00f2586/assets/css',
+          src: ['*.css', '!*.min.css'],
+          dest: '../../web/assets/d00f2586/assets/css/min',
+          ext: '.min.css'
+        }]
+      }
     },
     watch: {
       js: {
@@ -48,6 +59,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-  grunt.registerTask('default', ['concat','uglify','less']);
+  grunt.registerTask('default', ['concat','uglify','less','cssmin']);
 };

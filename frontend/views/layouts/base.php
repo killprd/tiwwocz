@@ -32,12 +32,7 @@ $assets = AppAsset::register($this);
 
 
 
-<div id="eu-cookies" class="<?=(Yii::$app->session['person_cokies']==Null?'active':null)?>">
-    Tento web používá k poskytování služeb, personalizaci reklam a analýze
-    návštěvnosti soubory cookie. Používáním tohoto webu s tím souhlasíte.
-    <button id="setcokie">V pořádku</button>
-    <a href="https://www.google.com/policies/technologies/cookies/">Další informace</a>
-</div>
+
 
 
 <footer class="site-footer">

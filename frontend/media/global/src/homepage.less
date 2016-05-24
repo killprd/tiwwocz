@@ -1,0 +1,43 @@
+@import url(bootstrap.less);
+@import url(bootstrap-extend.less);
+@import url(vars.less);
+@import url(components/helper-margin.less);
+
+body{
+	background: #fff;
+}
+.block_hp{
+	margin:0px;
+	background: url(../images/hp4.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover; 
+	min-height: 500px;
+
+	.block_hp--title,
+	.block_hp--title h1{
+		color: #fff;
+		font-size: 45px;
+	}
+	.block_hp--subtitle{
+		color: #fff;
+		font-size: 20px;
+		font-weight: 300;
+	}
+	.top-nav-right{
+		box-shadow: 0px;
+		.navbar-nav.navbar-right.nav{
+			>li,>li a{
+				color: #fff;
+			    text-shadow: 0 0 1px #000;
+				&:hover{
+					background:none;
+				}
+			}
+		}
+	}
+}
+
+
+

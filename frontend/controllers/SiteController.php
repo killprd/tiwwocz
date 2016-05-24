@@ -12,7 +12,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
-
+use yii\web\Cookie;
 /**
  * Site controller
  */
@@ -72,8 +72,13 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $this->layout = 'subpage';
         return $this->render('index');
+    }
+
+    public function actionSubpage()
+    {
+        $this->layout = 'subpage';
+        return $this->render('subpage');
     }
 
     /**
@@ -210,5 +215,17 @@ class SiteController extends Controller
         return $this->render('resetPassword', [
             'model' => $model,
         ]);
+    }
+    public function actionGetlanguage(){
+        $language = Yii::$app->request->get('language');
+        Yii::$app->language = $language;
+
+        $languageCookie = new Cookie([
+            'name' => 'language',
+            'value' => $language,
+            'expire' => time() + 60 * 60 * 24 * 30, // 30 days
+        ]);
+        Yii::$app->response->cookies->add($languageCookie);
+        return $this->redirect(Yii::$app->request->referrer);
     }
 }

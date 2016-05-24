@@ -41,8 +41,7 @@ for($i=0;$i<=10;$i++){
 
             </div>
             <div class="block_item--listday col-sm-12">
-                <small>Vícedenní výlet</small>
-            
+                <small>Vícedenní výlet</small>            
                 <small class="days">Po</small> - <small class="days">Pá</small>
             </div>
 

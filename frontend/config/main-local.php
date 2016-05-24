@@ -1,6 +1,17 @@
 <?php
 
 $config = [
+    'bootstrap' => [
+        [
+            'class' => 'frontend\components\LanguageSelector',
+            'supportedLanguages' => ['en_US', 'ru_RU', 'cz_CZ'],
+        ],
+    ],
+    'aliases' => [
+        '@home' => 'http://tiwwo.dev',
+        '@bar' => 'http://www.tiwwo.czm',
+        '@lang' => '../../site/getlanguage/',
+    ],
     'components' => [
         'request' => [        
             'baseUrl' => '',
@@ -13,6 +24,7 @@ $config = [
             'baseUrl' => '/',
                        
         ],
+        
 
         'urlManagerFrontend' => [ 
         
@@ -54,6 +66,20 @@ $config = [
                 'yii\bootstrap\BootstrapPluginAsset' => [
                     'js' => [],
                     'jsOptions'=>['async'=>'async']
+                ],
+            ],
+        ],
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@app/messages',
+                    'sourceLanguage' => 'en',
+                    'fileMap' => [
+                        'app' => 'app.php',
+                        'app/menu' => 'menu.php',
+                        'app/error' => 'error.php',
+                    ],
                 ],
             ],
         ],

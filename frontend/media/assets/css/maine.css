@@ -14567,6 +14567,12 @@ body {
   margin-right: 10px;
   margin-left: 10px;
 }
+.subpage .site-menu > .site-menu-item > a {
+  padding: 0;
+}
+.subpage .site-menu-title:first-child {
+  margin-left: 0px;
+}
 .subpage .site-menu > .site-menu-item.active {
   border-top: none !important;
 }
