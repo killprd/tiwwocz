@@ -7868,6 +7868,20 @@ body {
 .block_hp .navbar .navbar-nav.navbar-right.nav > li a:hover {
   background: none;
 }
+.block_hp #btn-explore.active {
+  position: relative;
+  color: rgba(0, 0, 0, 0) !important;
+  background: rgba(0, 0, 0, 0) !important;
+  border: none;
+}
+.block_hp #btn-explore.active:before {
+  left: 38%;
+  width: 59px;
+  height: 38px;
+  content: '';
+  border: none;
+  background: url(../images/ico_arrow_down_explore.png);
+}
 .block_hp .block_explore {
   position: relative;
 }

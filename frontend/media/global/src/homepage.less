@@ -40,8 +40,24 @@ body{
 		}
 	}
 
-
+	#btn-explore{
+		&.active{
+			position: relative;
+			color: rgba(0,0,0,0) !important;
+			background: rgba(0,0,0,0)!important;
+			border:none;
+			&:before{
+				left:38%;
+				width:59px;
+				height:38px;
+				content: '';
+				border:none;
+				background: url(../images/ico_arrow_down_explore.png);
+			}
+		}
+	}
 	.block_explore{
+
 		position: relative;
 		>div{
 			z-index: 1;
