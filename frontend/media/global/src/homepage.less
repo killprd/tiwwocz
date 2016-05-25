@@ -2,6 +2,7 @@
 @import url(bootstrap-extend.less);
 @import url(vars.less);
 @import url(components/helper-margin.less);
+@import url(components/animation.less);
 
 body{
 	background: #fff;
@@ -13,7 +14,7 @@ body{
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover; 
-	min-height: 500px;
+	min-height: 820px;
 
 	.block_hp--title,
 	.block_hp--title h1{
@@ -25,14 +26,51 @@ body{
 		font-size: 20px;
 		font-weight: 300;
 	}
-	.top-nav-right{
-		box-shadow: 0px;
+	.navbar{
+		box-shadow: none !important;
+
 		.navbar-nav.navbar-right.nav{
 			>li,>li a{
 				color: #fff;
 			    text-shadow: 0 0 1px #000;
 				&:hover{
 					background:none;
+				}
+			}
+		}
+	}
+
+
+	.block_explore{
+		position: relative;
+		>div{
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			float: left;
+			background: #fff;
+			margin-top: 15px;
+			padding-top:15px;
+			padding-bottom: 15px;
+			border:none; 
+			box-shadow: 0 0px 5px #999;
+			display: none;
+		}
+		.block_explore--menu{
+			list-style: none;
+			margin: 0px;
+			padding: 0px;
+			li{
+				a{
+					display: inline-block;
+					padding: 5px;
+					color: #000;
+					font-size: 12px;
+					img{
+						display: inline-block;
+						margin-right: 20px;
+						border-radius: 5px;
+					}
 				}
 			}
 		}

@@ -1,6 +1,6 @@
 <?php
 return [
-    'Home' => 'Domů',
+    'Home' =>'Domů',
     'Login'=>'Přihlásit',
     'Registration'=>'Registrovat se'
 

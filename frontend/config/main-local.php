@@ -4,7 +4,7 @@ $config = [
     'bootstrap' => [
         [
             'class' => 'frontend\components\LanguageSelector',
-            'supportedLanguages' => ['en_US', 'ru_RU', 'cz_CZ'],
+            'supportedLanguages' => [ 'cs_CZ','en_US', 'ru_RU'],
         ],
     ],
     'aliases' => [
@@ -74,7 +74,7 @@ $config = [
                 'app*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => '@app/messages',
-                    'sourceLanguage' => 'en',
+                    'sourceLanguage' => 'cs',
                     'fileMap' => [
                         'app' => 'app.php',
                         'app/menu' => 'menu.php',

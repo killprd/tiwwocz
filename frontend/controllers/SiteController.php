@@ -228,4 +228,13 @@ class SiteController extends Controller
         Yii::$app->response->cookies->add($languageCookie);
         return $this->redirect(Yii::$app->request->referrer);
     }
+
+
+    public function actionGetcity($id){
+        return $this->renderAjax('//modules/_menu_hp',['items_menu'=>'Country - City','type'=>1],false);
+    }
+
+    public function actionGetcountry($id){
+        return $this->renderAjax('//modules/_menu_hp',['items_menu'=>'England - Country','type'=>0],false);
+    }
 }
