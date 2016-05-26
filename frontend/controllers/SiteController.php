@@ -13,6 +13,8 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use yii\web\Cookie;
+use frontend\models\Countries;
+use frontend\models\Cities;
 /**
  * Site controller
  */
@@ -72,7 +74,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        //Cities::createdata();
+
+        return $this->render('index',['items_menu'=>Countries::get(yii::$app->language),'type'=>0]);
     }
 
     public function actionSubpage()
@@ -231,10 +235,10 @@ class SiteController extends Controller
 
 
     public function actionGetcity($id){
-        return $this->renderAjax('//modules/_menu_hp',['items_menu'=>'Country - City','type'=>1],false);
+        return $this->renderAjax('//modules/_menu_hp',['items_menu'=>Cities::get(yii::$app->language,$id),'type'=>1],false);
     }
 
     public function actionGetcountry($id){
-        return $this->renderAjax('//modules/_menu_hp',['items_menu'=>'England - Country','type'=>0],false);
+        return $this->renderAjax('//modules/_menu_hp',['items_menu'=>Countries::get(yii::$app->language),'type'=>0],false);
     }
 }
