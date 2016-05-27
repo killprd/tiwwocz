@@ -55,6 +55,7 @@ $this->registerJs('$(document).on("pjax:timeout", function(event) {
 <style>
      
     @import url(<?= $asset->baseUrl?>/assets/css/hp.css);
+    @import url(<?= $asset->baseUrl?>/global/fonts/web-icons/web-icons.css);
 </style>
 <?php $this->registerJsFile($asset->baseUrl.'/assets/js/jquery-1.11.2.min.js',['depends' => [\yii\web\JqueryAsset::className()]]); ?>
 <?php $this->registerJsFile($asset->baseUrl.'/assets/js/hp.js',['depends' => [\yii\web\JqueryAsset::className()]]); ?>

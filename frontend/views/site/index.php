@@ -24,3 +24,28 @@ $this->title = 'Tiwwo';
     </div>
 
 </div><!-- zakončení block_explore-->
+
+<div class="clearfix"></div>
+<div class="block_titles container-fluid">  
+    <div class="col-sm-12 text-center"><h3><?=Yii::t('app', "We Think You Might Be Interested")?></h3></div>
+    <div class="col-sm-12 text-center"><h4><?=Yii::t('app', "hand select your destination")?></h4></div>
+    <div class="clearfix"></div>
+</div>
+
+<div class="block_hpitems">
+     <?= $this->render('//modules/_item_hp',['items_menu'=>$items_menu,'type'=>0])?>
+</div>
+
+
+
+<div class="clearfix"></div>
+<div class="block_titles green container-fluid margin-bottom-25">  
+    <div class="col-sm-12 text-center"><h3><?=Yii::t('app', "From travellers blogs")?></h3></div>
+        <div class="col-sm-2 col-sm-offset-5"><hr/></div>
+    <div class="col-sm-12 text-center"><h4><?=Yii::t('app', "Tips for best travelling")?></h4></div>
+    <div class="clearfix"></div>
+</div>
+
+<div class="block_hpitems">
+     <?= $this->render('//modules/_blog_hp',['items_menu'=>$items_menu,'type'=>0])?>
+</div>
