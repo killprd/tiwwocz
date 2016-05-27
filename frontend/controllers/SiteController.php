@@ -241,4 +241,26 @@ class SiteController extends Controller
     public function actionGetcountry($id){
         return $this->renderAjax('//modules/_menu_hp',['items_menu'=>Countries::get(yii::$app->language),'type'=>0],false);
     }
+
+
+
+
+
+    public function actionClearAssets()
+    {
+        foreach(glob(Yii::$app->assetManager->basePath . DIRECTORY_SEPARATOR . '*') as $asset){
+            if(is_link($asset)){
+                unlink($asset);
+            } elseif(is_dir($asset)){
+                $this->deleteDir($asset);
+            } else {
+                unlink($asset);
+            }
+        }
+        $this->flash('success', Yii::t('easyii', 'Assets cleared'));
+        return $this->back();
+    }
+
+
+    
 }
