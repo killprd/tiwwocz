@@ -258,7 +258,7 @@ class SiteController extends Controller
                 unlink($asset);
             }
         }
-        $this->flash('success', Yii::t('easyii', 'Assets cleared'));
+       // $this->flash('success', Yii::t('easyii', 'Assets cleared'));
         return $this->back();
     }
 
