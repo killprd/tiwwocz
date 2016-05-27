@@ -15,6 +15,7 @@ use frontend\models\ContactForm;
 use yii\web\Cookie;
 use frontend\models\Countries;
 use frontend\models\Cities;
+use yii\helpers\BaseFileHelper;
 /**
  * Site controller
  */
@@ -252,7 +253,7 @@ class SiteController extends Controller
             if(is_link($asset)){
                 unlink($asset);
             } elseif(is_dir($asset)){
-                $this->deleteDir($asset);
+                BaseFileHelper::removeDirectory($asset);
             } else {
                 unlink($asset);
             }
@@ -262,5 +263,5 @@ class SiteController extends Controller
     }
 
 
-    
+
 }
