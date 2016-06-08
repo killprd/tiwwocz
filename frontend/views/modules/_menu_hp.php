@@ -1,6 +1,6 @@
 <?php
 use frontend\assets\AppAsset;
-$asset = AppAsset::register($this);
+use yii\helpers\Html;$asset = AppAsset::register($this);
 
 use frontend\helpers\Image;
 

@@ -4,6 +4,7 @@ $assets = AppAsset::register($this);
 use frontend\helpers\Languages as Langmenu;
 use frontend\helpers\Image;
 use yii\bootstrap\Nav;
+use yii\helpers\Html;
 use yii\bootstrap\NavBar;
 $langs_menu = Langmenu::getLanguage($assets);
 

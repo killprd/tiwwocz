@@ -3,6 +3,7 @@ namespace common\models;
 
 use Yii;
 use yii\base\Model;
+use frontend\models\Users;
 
 /**
  * Login form
@@ -58,6 +59,7 @@ class LoginForm extends Model
         if ($this->validate()) {
             return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
         } else {
+            
             return false;
         }
     }
@@ -70,7 +72,12 @@ class LoginForm extends Model
     protected function getUser()
     {
         if ($this->_user === null) {
-            $this->_user = User::findByUsername($this->username);
+            $this->_user = Users::find()->where(['username'=>$this->username])->one();
+        }
+        if (Yii::$app->user->login($this->_user, 0) ) {
+           // var_dump(Yii::$app->user);
+        } else {
+            echo 'didnt login';
         }
 
         return $this->_user;

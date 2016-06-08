@@ -6,17 +6,25 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
-
+use frontend\assets\AppAsset;
+use common\widgets\Alert;
+$asset = AppAsset::register($this);
 $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Please fill out the following fields to login:</p>
+   <div class="page animsition vertical-align text-center" data-animsition-in="fade-in" data-animsition-out="fade-out">
+            <div class="page-content vertical-align-middle">
+                <div class="brand">
+                    TIWWO.CZ
+                    <h2 class="brand-text"><?= Html::encode($this->title) ?></h2>
+                </div>
+                <p>Please fill out the following fields to login:</p>
 
-    <div class="row">
-        <div class="col-lg-5">
+
+    
+
+   
             <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
                 <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
@@ -34,6 +42,19 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
 
             <?php ActiveForm::end(); ?>
+     
+            </div>
         </div>
-    </div>
-</div>
+
+
+
+
+
+<style>
+     
+    @import url(<?= $asset->baseUrl?>/assets/css/login.css);
+    @import url(<?= $asset->baseUrl?>/global/fonts/web-icons/web-icons.css);
+</style>
+<?php $this->registerJsFile($asset->baseUrl.'/assets/js/jquery-1.11.2.min.js',['depends' => [\yii\web\JqueryAsset::className()]]); ?>
+
+

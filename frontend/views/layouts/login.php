@@ -14,14 +14,8 @@ $asset = AppAsset::register($this);
 
 
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
-<body>
-<div class="block_hp container-fluid">      
-   
-   
-    <div class="col-sm-4 col-sm-offset-8">
 
-        <?= $this->render('//modules/_langs')?>
-    </div>
+<body class="page-login layout-full page-dark">
     
 
 
@@ -42,7 +36,7 @@ $asset = AppAsset::register($this);
      
 
 
-
+<div class="clearfix"></div>
 
     
 

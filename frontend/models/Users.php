@@ -7,6 +7,11 @@ use yii\db\Query;
 use yii\behaviors\SluggableBehavior;
 use frontend\models\UsersData;
 
+use yii\base\NotSupportedException;
+use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveRecord;
+use yii\web\IdentityInterface;
+
 /**
  * This is the model class for table "soft_users".
  *
@@ -30,8 +35,12 @@ use frontend\models\UsersData;
  * @property string $image
  * @property integer $method_activate
  */
-class Users extends \yii\db\ActiveRecord
+class Users extends \yii\db\ActiveRecord implements IdentityInterface
+
 {
+
+    const STATUS_DELETED = 0;
+    const STATUS_ACTIVE = 1;
     /**
      * @inheritdoc
      */
@@ -46,8 +55,12 @@ class Users extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['status'], 'required'],
-            [['status'], 'integer'],
+            
+           
+            [['status'], 'integer'],           
+            ['status', 'default', 'value' => self::STATUS_ACTIVE],
+            ['role', 'default', 'value' => 'guide'],
+            ['lang', 'default', 'value' => Yii::$app->language],
             [['lang'], 'string', 'max' => 64],
             [['username', 'password', 'salt', 'name', 'surname', 'email', 'adress', 'dic', 'company_name', 'image'], 'string', 'max' => 255],
             [['telephone', 'ic'], 'string', 'max' => 128],
@@ -159,15 +172,179 @@ class Users extends \yii\db\ActiveRecord
 
 
 
-     private function createPassword($data,$salt){
+    private function createPassword($data,$salt){
 
         return MD5($salt.$data.$salt);
     }
+    
+
+
+
+
     public static function randSalt($lenght){
         $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         $pass= substr(str_shuffle($chars),0,$lenght);    
         return MD5($pass);
     }
+
+
+   
+
+
+
+    public function checkUser($attribute, $params)
+    {
+
+        if($this->scenar==0){
+            $row = \Yii::$app->db->createCommand("SELECT email FROM users WHERE email = '".$this->email."'")->queryAll();
+            if(!isset(\Yii::$app->session['user']) OR \Yii::$app->session['user']==''){
+                if(count($row)!=0){
+                    $this->addError('email',Yii::t('app','This email {{$this->email}} already exist'));
+                }
+            }
+        }
+        return true;
+    }
+
+
+
+
+
+
+     public static function findIdentity($id)
+    {
+        return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public static function findIdentityByAccessToken($token, $type = null)
+    {
+        throw new NotSupportedException('"findIdentityByAccessToken" is not implemented.');
+    }
+
+    /**
+     * Finds user by username
+     *
+     * @param string $username
+     * @return static|null
+     */
+    public static function findByUsername($username)
+    {
+        return self::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
+    }
+
+    /**
+     * Finds user by password reset token
+     *
+     * @param string $token password reset token
+     * @return static|null
+     */
+    public static function findByPasswordResetToken($token)
+    {
+        if (!self::isPasswordResetTokenValid($token)) {
+            return null;
+        }
+
+        return static::findOne([
+            'password_reset_token' => $token,
+            'status' => self::STATUS_ACTIVE,
+        ]);
+    }
+
+    /**
+     * Finds out if password reset token is valid
+     *
+     * @param string $token password reset token
+     * @return boolean
+     */
+    public static function isPasswordResetTokenValid($token)
+    {
+        if (empty($token)) {
+            return false;
+        }
+
+        $timestamp = (int) substr($token, strrpos($token, '_') + 1);
+        $expire = Yii::$app->params['users.passwordResetTokenExpire'];
+        return $timestamp + $expire >= time();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getId()
+    {
+        return $this->getPrimaryKey();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getAuthKey()
+    {
+        return $this->auth_key;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function validateAuthKey($authKey)
+    {
+        return $this->getAuthKey() === $authKey;
+    }
+
+    /**
+     * Validates password
+     *
+     * @param string $password password to validate
+     * @return boolean if password provided is valid for current user
+     */
+    public function validatePassword($password)
+    {
+        return Yii::$app->security->validatePassword($password, $this->password);
+    }
+
+    /**
+     * Generates password hash from password and sets it to the model
+     *
+     * @param string $password
+     */
+    public function setPassword($password)
+    {
+        $this->password = Yii::$app->security->generatePasswordHash($password);
+    }
+
+    /**
+     * Generates "remember me" authentication key
+     */
+    public function generateAuthKey()
+    {
+        $this->auth_key = Yii::$app->security->generateRandomString();
+    }
+
+    /**
+     * Generates new password reset token
+     */
+    public function generatePasswordResetToken()
+    {
+        $this->password_reset_token = Yii::$app->security->generateRandomString() . '_' . time();
+    }
+
+    /**
+     * Removes password reset token
+     */
+    public function removePasswordResetToken()
+    {
+        $this->password_reset_token = null;
+    }
+
+
+
+
+
+
+
 
 
 

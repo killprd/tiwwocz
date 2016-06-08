@@ -24,15 +24,20 @@ $config = [
             'baseUrl' => '/',
                        
         ],
-        
+        'user' => [
+            'identityClass' => 'common\models\User',
+            'enableAutoLogin' => true,
+      
+        ],
 
         'urlManagerFrontend' => [ 
         
             'baseUrl' => $baseUrl,  
-            'enablePrettyUrl' => true,
+            'enablePrettyUrl' => false,
             'showScriptName' => false, 
             'class' => 'yii\web\UrlManager',
-            'rules' => [             
+            'rules' => [          
+                //'http://<user:[^www]\w+>.tiwwo.dev/<controller:\w+>/<action:\w+>//' => '<controller>/<action>'
                 '<action:(login|logout|about)>' => 'site/<action>',
                 //['class' => 'common\components\CarUrlRule', 'connectionID' => 'db'],
             ],
@@ -45,8 +50,7 @@ $config = [
             'charset' => 'utf8',
         ],
         'mailer' => [
-            'class' => 'yiiswiftmailerMailer',
-            'viewPath' => '@common/mail',
+            'class' => 'yii\swiftmailer\Mailer',
             // send all mails to a file by default. You have to set
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.

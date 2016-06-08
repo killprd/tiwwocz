@@ -14,12 +14,10 @@ use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use yii\web\Cookie;
 use frontend\models\Country;
-use frontend\models\sCities;
+use frontend\models\Cities;
 use frontend\models\Users;
 use yii\helpers\BaseFileHelper;
-use yii\web\IdentityInterface;
 /**
-use 
  * Site controller
  */
 class SiteController extends Controller
@@ -79,11 +77,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
         //Users::createdata();
-        print_r(Yii::$app->user->isGuest);
-        if (Yii::$app->user->isGuest) {
-                echo "is NOT login";
-            }
-        //print_r(yii::$app->user);
+
         return $this->render('index',['items_menu'=>Country::get(yii::$app->language),'type'=>0]);
     }
 
@@ -93,10 +87,6 @@ class SiteController extends Controller
         return $this->render('subpage');
     }
 
-   
-
-
-
     /**
      * Logs in a user.
      *
@@ -105,34 +95,18 @@ class SiteController extends Controller
     public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {
-
             return $this->goHome();
         }
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-
-            Yii::$app->user->returnUrl =['admin/index','ref'=>1];
-
-           // print_r(Yii::$app->user->returnUrl);exit;
-
-            return $this->redirect(Yii::$app->user->returnUrl);
+            return $this->goBack();
         } else {
             return $this->render('login', [
                 'model' => $model,
             ]);
         }
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * Logs out the current user.
@@ -145,14 +119,6 @@ class SiteController extends Controller
 
         return $this->goHome();
     }
-
-
-
-
-
-
-
-
 
     /**
      * Displays contact page.
@@ -177,13 +143,15 @@ class SiteController extends Controller
         }
     }
 
-
-
-
-
-
-
-
+    /**
+     * Displays about page.
+     *
+     * @return mixed
+     */
+    public function actionAbout()
+    {
+        return $this->render('about');
+    }
 
     /**
      * Signs user up.
@@ -192,12 +160,10 @@ class SiteController extends Controller
      */
     public function actionSignup()
     {
-        $this->layout = 'login';
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
-
-                if (Yii::$app->getUser()->login($user)) { 
+                if (Yii::$app->getUser()->login($user)) {
                     return $this->goHome();
                 }
             }
@@ -207,13 +173,6 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
-
-
-
-
-
-
-
 
     /**
      * Requests password reset.
@@ -237,13 +196,6 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
-
-
-
-
-
-
-
 
     /**
      * Resets password.
@@ -270,15 +222,6 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
-
-
-
-
-
-
-
-
-
     public function actionGetlanguage(){
         $language = Yii::$app->request->get('language');
         Yii::$app->language = $language;
@@ -293,32 +236,13 @@ class SiteController extends Controller
     }
 
 
-
-
-
-
-
-
     public function actionGetcity($id){
         return $this->renderAjax('//modules/_menu_hp',['items_menu'=>Cities::get(yii::$app->language,$id),'type'=>1],false);
     }
 
-
-
-
-
-
-
-
     public function actionGetcountry($id){
         return $this->renderAjax('//modules/_menu_hp',['items_menu'=>Country::get(yii::$app->language),'type'=>0],false);
     }
-
-
-
-
-
-
 
 
 
@@ -338,10 +262,6 @@ class SiteController extends Controller
        // $this->flash('success', Yii::t('easyii', 'Assets cleared'));
         return $this->back();
     }
-
-
-
-
 
 
 

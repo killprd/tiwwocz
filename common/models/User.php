@@ -12,7 +12,7 @@ use yii\web\IdentityInterface;
  *
  * @property integer $id
  * @property string $username
- * @property string $password_hash
+ * @property string $password
  * @property string $password_reset_token
  * @property string $email
  * @property string $auth_key
@@ -32,7 +32,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function tableName()
     {
-        return '{{%user}}';
+        return 'soft_users';
     }
 
     /**
@@ -56,12 +56,42 @@ class User extends ActiveRecord implements IdentityInterface
         ];
     }
 
+
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            if ($this->isNewRecord) {
+                $this->auth_key = \Yii::$app->security->generateRandomString();
+            }
+            return true;
+        }
+        return false;
+    }
+
+    
+
+    private function createPassword($data,$salt){
+
+        return MD5($salt.$data.$salt);
+    }
+    
+
+
+
+
+    public static function randSalt($lenght){
+        $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        $pass= substr(str_shuffle($chars),0,$lenght);    
+        return MD5($pass);
+    }
+
+
     /**
      * @inheritdoc
      */
     public static function findIdentity($id)
     {
-        return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
+        return static::findOne(['user_id' => $id, 'status' => self::STATUS_ACTIVE]);
     }
 
     /**
@@ -150,7 +180,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function validatePassword($password)
     {
-        return Yii::$app->security->validatePassword($password, $this->password_hash);
+        return Yii::$app->security->validatePassword($password, $this->password);
     }
 
     /**
@@ -160,7 +190,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function setPassword($password)
     {
-        $this->password_hash = Yii::$app->security->generatePasswordHash($password);
+        $this->password = Yii::$app->security->generatePasswordHash($password);
     }
 
     /**
