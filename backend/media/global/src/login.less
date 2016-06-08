@@ -1,0 +1,41 @@
+@import url(bootstrap.less);
+@import url(bootstrap-extend.less);
+@import url(vars.less);
+@import url(components/helper-margin.less);
+@import url(components/animation.less);
+@import url(components/widget.less);
+
+
+body.page-login{
+	color: #fff;
+	  position:relative;
+	  &:before{
+	  	    background-position: center top;
+	    background-size: cover;
+	    content: "";
+	    height: 100%;
+	    left: 0;
+	    position: fixed;
+	    top: 0;
+	    width: 100%;
+	    z-index: -1;
+	  	background-image: url("../images/login.jpg");
+	  }
+	  &:after{
+	  	background-color: rgba(38, 50, 56, 0.6);
+	    content: "";
+	    height: 100%;
+	    left: 0;
+	    position: fixed;
+	    top: 0;
+	    width: 100%;
+	    z-index: -1;
+	  }
+
+	.page-content {
+	    padding: 30px;
+	}
+	.vertical-align-middle {
+	    vertical-align: middle;
+	}
+}

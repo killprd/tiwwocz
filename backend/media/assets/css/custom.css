@@ -1,0 +1,47 @@
+body {
+  background: #f1f5f6;
+}
+.site-navbar ol.breadcrumb {
+  display: inline-block;
+}
+.subpage .site-navbar {
+  background: rgba(0, 0, 0, 0);
+  box-shadow: none;
+}
+.subpage .site-navbar .navbar-container {
+  background: #f1f5f6;
+}
+.subpage .site-menubar {
+  box-shadow: none;
+  top: 0;
+  z-index: 1501;
+  height: 100%;
+  background: #ffffff;
+}
+.subpage .site-menubar .site-menu > .site-menu-item.active,
+.subpage .site-menubar .site-menu > .site-menu-item.open > a,
+.subpage .site-menubar .site-menu .site-menu-sub {
+  background: #ffffff;
+}
+.subpage .site-menubar a,
+.subpage .site-menubar a:hover {
+  color: #2b3034;
+}
+.subpage .site-menubar .site-menu > .site-menu-item.active > a,
+.subpage .site-menubar .site-menu > .site-menu-item.hover > a,
+.subpage .site-menubar .site-menu > .site-menu-item:hover > a .site-menu .site-menu-sub .site-menu-item.hover > a,
+.subpage .site-menubar .site-menu .site-menu-sub .site-menu-item:hover > a {
+  color: #2b3034;
+}
+.subpage .site-menubar-footer {
+  display: none;
+}
+.subpage .site-menubar-body {
+  height: 100%;
+}
+.subpage .block_profile--title {
+  padding: 25px 15px;
+  color: #000;
+  font-size: 24px;
+  font-weight: bold;
+}
