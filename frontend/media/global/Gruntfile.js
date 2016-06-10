@@ -14,14 +14,16 @@ module.exports = function(grunt) {
            options: {
                paths: ["assets/css"]
            },
-           files: {"../../web/assets/d00f2586/assets/css/hp.css": "src/homepage.less"}
+           files: {"../../web/assets/7437f8e2/assets/css/hp.css": "src/homepage.less"},
+           files: {"../../web/assets/7437f8e2/assets/css/login.css": "src/login.less"}
        },
        production: {
            options: {
                paths: ["assets/css"],
                cleancss: true
            },
-           files: {"../assets/css/hp.css": "src/homepage.less"}
+           files: {"../assets/css/hp.css": "src/homepage.less"},
+           files: {"../assets/css/login.css": "src/login.less"}
        }
     },
     uglify: {
@@ -34,9 +36,9 @@ module.exports = function(grunt) {
       target: {
         files: [{
           expand: true,
-          cwd: '../../web/assets/d00f2586/assets/css',
+          cwd: '../../web/assets/7437f8e2/assets/css',
           src: ['*.css', '!*.min.css'],
-          dest: '../../web/assets/d00f2586/assets/css/min',
+          dest: '../../web/assets/7437f8e2/assets/css/min',
           ext: '.min.css'
         }]
       }
