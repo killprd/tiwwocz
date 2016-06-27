@@ -16,22 +16,24 @@ NavBar::begin([
     ],
 ]);
 $menuItems = [
-    ['label' => Yii::t('app/menu', 'Home'), 'url' => ['/site/index']],
+    ['label' => Yii::t('app/menu', 'Home'), 'url' => ['/','language'=>Langmenu::getBack(Yii::$app->language)]],
 ];
 if (Yii::$app->user->isGuest) {
-    $menuItems[] = ['label' => Yii::t('app/menu', 'Registration'), 'url' => ['/site/signup']];
-    $menuItems[] = ['label' => Yii::t('app/menu', 'Login'), 'url' => ['/site/login']];
+    $menuItems[] = ['label' => Yii::t('app/menu', 'Registration'), 'url' => ['/site/signup','language'=>Langmenu::getBack(Yii::$app->language)]];
+    $menuItems[] = ['label' => Yii::t('app/menu', 'Login'), 'url' => ['/site/login','language'=>Langmenu::getBack(Yii::$app->language)]];
     $menuItems[] = $langs_menu;
 
 } else {
+    $menuItems[] = ['label' => Yii::t('app', 'Profile'), 'url' => ['../../../admin',]];
     $menuItems[] = '<li>'
         . Html::beginForm(['/site/logout'], 'post')
         . Html::submitButton(
-            'Logout (' . Yii::$app->user->identity->username . ')',
+            'Logout',
             ['class' => 'btn btn-link']
         )
         . Html::endForm()
         . '</li>';
+        $menuItems[] = $langs_menu;
 }
 echo Nav::widget([
     'options' => ['class' => 'navbar-nav navbar-right'],

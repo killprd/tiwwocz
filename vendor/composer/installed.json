@@ -971,5 +971,48 @@
             "bower-asset-main": "dist/typeahead.bundle.js"
         },
         "installation-source": "dist"
+    },
+    {
+        "name": "codemix/yii2-localeurls",
+        "version": "1.4.3",
+        "version_normalized": "1.4.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/codemix/yii2-localeurls.git",
+            "reference": "342ffbd5f5d9a1264a82f21ccc669ebcc3102703"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/codemix/yii2-localeurls/zipball/342ffbd5f5d9a1264a82f21ccc669ebcc3102703",
+            "reference": "342ffbd5f5d9a1264a82f21ccc669ebcc3102703",
+            "shasum": ""
+        },
+        "require": {
+            "yiisoft/yii2": "*"
+        },
+        "time": "2016-03-21 21:06:23",
+        "type": "yii2-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "codemix\\localeurls\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Härtl",
+                "email": "haertl.mike@gmail.com"
+            }
+        ],
+        "description": "Automatic locale/language management for URLs.",
+        "keywords": [
+            "i18n",
+            "locale",
+            "yii2"
+        ]
     }
 ]

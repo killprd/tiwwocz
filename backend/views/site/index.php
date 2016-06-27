@@ -107,7 +107,7 @@ $this->title = 'tiwwo';
               </li>
               <li class="divider" role="presentation"></li>
               <li role="presentation">
-                <a href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Logout</a>
+                <a href="<?=Yii::$app->urlManager->createUrl(['site/logout'])?>" role="menuitem" data-method="post"><i class="icon wb-power" aria-hidden="true"></i> Logout</a>
               </li>
             </ul>
           </li>

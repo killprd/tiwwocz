@@ -66,4 +66,13 @@ return array (
       '@alfa6661/widgets' => $vendorDir . '/alfa6661/yii2-raty',
     ),
   ),
+  'codemix/yii2-localeurls' => 
+  array (
+    'name' => 'codemix/yii2-localeurls',
+    'version' => '1.4.3.0',
+    'alias' => 
+    array (
+      '@codemix/localeurls' => $vendorDir . '/codemix/yii2-localeurls',
+    ),
+  ),
 );

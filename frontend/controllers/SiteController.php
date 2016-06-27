@@ -18,6 +18,7 @@ use frontend\models\sCities;
 use frontend\models\Users;
 use yii\helpers\BaseFileHelper;
 use yii\web\IdentityInterface;
+use frontend\helpers\Languages;
 /**
 use 
  * Site controller
@@ -78,13 +79,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        //Users::createdata();
-        print_r(Yii::$app->user->isGuest);
-        if (Yii::$app->user->isGuest) {
-                echo "is NOT login";
-            }
-        //print_r(yii::$app->user);
-        return $this->render('index',['items_menu'=>Country::get(yii::$app->language),'type'=>0]);
+        
+        return $this->render('index',['items_menu'=>Country::get(Languages::get(yii::$app->language)),'type'=>0]);
     }
 
     public function actionSubpage()
@@ -112,7 +108,7 @@ class SiteController extends Controller
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
 
-            Yii::$app->user->returnUrl =['admin/index','ref'=>1];
+            Yii::$app->user->returnUrl =['/../../../../admin','ref'=>1];
 
            // print_r(Yii::$app->user->returnUrl);exit;
 
@@ -281,14 +277,16 @@ class SiteController extends Controller
 
     public function actionGetlanguage(){
         $language = Yii::$app->request->get('language');
-        Yii::$app->language = $language;
-
-        $languageCookie = new Cookie([
-            'name' => 'language',
-            'value' => $language,
-            'expire' => time() + 60 * 60 * 24 * 30, // 30 days
-        ]);
-        Yii::$app->response->cookies->add($languageCookie);
+        if($language!=''){
+            Yii::$app->language = $language;
+            echo Yii::$app->language;  exit;                                                                                                                                                                                                                                                                                                                                                                                                                                 
+            $languageCookie = new Cookie([
+                'name' => 'language',
+                'value' => $language,
+                'expire' => time() + 60 * 60 * 24 * 30, // 30 days
+            ]);
+            Yii::$app->response->cookies->add($languageCookie);
+        }
         return $this->redirect(Yii::$app->request->referrer);
     }
 

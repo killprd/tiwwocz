@@ -2,12 +2,12 @@
 
 
 $config = [
-    'bootstrap' => [
+    /*'bootstrap' => [
         [
             'class' => 'frontend\components\LanguageSelector',
             'supportedLanguages' => [ 'cs_CZ','en_US', 'ru_RU'],
         ],
-    ],
+    ],*/
     'aliases' => [
         '@home' => 'http://tiwwo.dev',
         '@bar' => 'http://www.tiwwo.czm',
@@ -18,28 +18,30 @@ $config = [
             'baseUrl' => '/admin/',
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'CHHFNSXJ_YqIjDbR5Y4Arpa_Mqe1R0bP',
-        ],
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false, 
-            'baseUrl' => '/',
-                       
-        ],
+        ],        
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
       
         ],
 
-        'urlManager' => [         
-             
+        'urlManager' => [
+            'class' => 'codemix\localeurls\UrlManager',
+            'languages' => [ 'cs','en','ru', 'fr', 'es'],
+            'enableDefaultLanguageUrlCode' => true,
+            'enableLanguagePersistence' => false,
             'enablePrettyUrl' => true,
             'showScriptName' => false, 
-            'baseUrl' =>'/admin/', 
-            'class' => 'yii\web\UrlManager',
-            'rules' => [          
-                //'http://<user:[^www]\w+>.tiwwo.dev/<controller:\w+>/<action:\w+>//' => '<controller>/<action>'
-                '<action:(login|logout|about)>' => 'site/<action>',
+            'baseUrl' => '/admin',
+            'enableStrictParsing' => false,
+            'ignoreLanguageUrlPatterns' => [
+                '#^assets/#' => '#^assets/#',
+            ],
+            'rules' => [       
+                '<module:\w+>/<language:\w+>/<controller>/<action>' => 'admin/site/<action>',
+                '<language:\w+>/<controller>/<action:(login|logout|about)>' => 'site/<action>',
+                '<module:\w+>/<language:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
+                
                 //['class' => 'common\components\CarUrlRule', 'connectionID' => 'db'],
             ],
         ],

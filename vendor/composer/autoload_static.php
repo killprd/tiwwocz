@@ -25,6 +25,7 @@ class ComposerStaticInitb6e4f4c7f1d0f56a801d96c1453bb097
         ),
         'c' => 
         array (
+            'codemix\\localeurls\\' => 19,
             'cebe\\markdown\\' => 14,
         ),
         'a' => 
@@ -69,6 +70,10 @@ class ComposerStaticInitb6e4f4c7f1d0f56a801d96c1453bb097
         'yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
+        ),
+        'codemix\\localeurls\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/codemix/yii2-localeurls',
         ),
         'cebe\\markdown\\' => 
         array (

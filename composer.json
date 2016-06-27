@@ -7,6 +7,7 @@
         }
     ],
     "require": {
-        "alfa6661/yii2-raty": "*"
+        "alfa6661/yii2-raty": "*",
+        "codemix/yii2-localeurls": "^1.4"
     }
 }
