@@ -2,16 +2,21 @@
 
 
 $config = [
-    /*'bootstrap' => [
+    'bootstrap' => [
         [
             'class' => 'frontend\components\LanguageSelector',
             'supportedLanguages' => [ 'cs_CZ','en_US', 'ru_RU'],
         ],
-    ],*/
+    ],
     'aliases' => [
         '@home' => 'http://tiwwo.dev',
         '@bar' => 'http://www.tiwwo.czm',
         '@lang' => '../../site/getlanguage/',
+    ],
+    'modules' => [
+        'noty' => [
+            'class' => 'lo\modules\noty\Module',
+        ],
     ],
     'components' => [
         'request' => [        
@@ -78,7 +83,7 @@ $config = [
         ],
         'i18n' => [
             'translations' => [
-                'app*' => [
+                '*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => '@app/messages',
                     'sourceLanguage' => 'cs',
@@ -90,6 +95,7 @@ $config = [
                 ],
             ],
         ],
+
     ],
 ];
 if (!YII_ENV_TEST) {

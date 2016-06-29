@@ -1,5 +1,5 @@
 <?php
-namespace frontend\helpers;
+namespace backend\helpers;
 
 class GD
 {

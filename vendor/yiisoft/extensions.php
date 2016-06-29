@@ -75,4 +75,13 @@ return array (
       '@codemix/localeurls' => $vendorDir . '/codemix/yii2-localeurls',
     ),
   ),
+  'loveorigami/yii2-notification-wrapper' => 
+  array (
+    'name' => 'loveorigami/yii2-notification-wrapper',
+    'version' => '3.0.0.0',
+    'alias' => 
+    array (
+      '@lo/modules/noty' => $vendorDir . '/loveorigami/yii2-notification-wrapper/src',
+    ),
+  ),
 );

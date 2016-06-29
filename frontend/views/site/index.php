@@ -25,8 +25,8 @@ $this->title = 'Tiwwo';
     </div>
 
 </div><!-- zakončení block_explore-->
-<?=Yii::$app->language?>
-<a href="<?=Yii::$app->urlManagerBackend->createUrl(['/', 'language' => Yii::$app->language])?>">test</a>
+
+
 <div class="clearfix"></div>
 <div class="block_titles container-fluid">  
     <div class="col-sm-12 text-center"><h3><?=Yii::t('app', "We Think You Might Be Interested")?></h3></div>

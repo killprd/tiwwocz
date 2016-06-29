@@ -1,10 +1,30 @@
 <?php
 return [
-    "Let's  Travel as Simple as Possible" => 'Cestování nebylo nikdy jednodušší',
-    '2 easy steps to start explore world' => 'Stačí dva kroky k prohlížení vaší destinace',
-    'Back to explore country' => 'Zpět na výpis států',
-    'SELECT YOUR DESTINATION' =>'VYBERTE SVOU DESTINACI',
-    'Installation'=>'Instalace programu'
+    'Edit you' => 'Domů',
+    'Login'=>'Přihlásit',
+    'Registration'=>'Registrovat se',
+    'Edit your profile'=>'Editace profilu',
+    'Admin page'=>'Tvá administarce',
+    'About page'=>'O mě',
+    'User ID'=>'',
+	'Status'=>'Status',
+	'Lang'=>'Jazyk',
+	'Username'=>'Uživateské jméno',
+	'Password'=>'Heslo',
+	'Name'=>'Jméno',
+	'Surname'=>'Příjmení',
+	'Email'=>'E-mail',
+	'Role'=>'Role',
+	'Adress'=>'Adresa',
+	'Telephone'=>'Telefon',
+	'Zip'=>'PSČ',
+	'Ic'=>'IČ',
+	'Dic'=>'DIČ',
+	'Licence'=>'Licence',
+	'Company Name'=>'Název společnosti',
+	'Image'=>'Obrázek',
+	'Method Activate'=>'Metoda aktivace',
+	'Done'=>'Dokončeno',
 
 
 ];

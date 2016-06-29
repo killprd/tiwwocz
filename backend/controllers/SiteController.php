@@ -22,7 +22,7 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login','index', 'error',],
+                        'actions' => ['login','index', 'error','logout'],
                         'allow' => true,
                     ],
                     [
@@ -32,12 +32,7 @@ class SiteController extends Controller
                     ],
                 ],
             ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
-            ],
+            
         ];
     }
 

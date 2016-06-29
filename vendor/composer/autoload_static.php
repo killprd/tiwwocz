@@ -23,6 +23,10 @@ class ComposerStaticInitb6e4f4c7f1d0f56a801d96c1453bb097
             'yii\\bootstrap\\' => 14,
             'yii\\' => 4,
         ),
+        'l' => 
+        array (
+            'lo\\modules\\noty\\' => 16,
+        ),
         'c' => 
         array (
             'codemix\\localeurls\\' => 19,
@@ -70,6 +74,10 @@ class ComposerStaticInitb6e4f4c7f1d0f56a801d96c1453bb097
         'yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
+        ),
+        'lo\\modules\\noty\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/loveorigami/yii2-notification-wrapper/src',
         ),
         'codemix\\localeurls\\' => 
         array (

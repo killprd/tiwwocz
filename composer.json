@@ -8,6 +8,7 @@
     ],
     "require": {
         "alfa6661/yii2-raty": "*",
-        "codemix/yii2-localeurls": "^1.4"
+        "codemix/yii2-localeurls": "^1.4",
+        "loveorigami/yii2-notification-wrapper": "*"
     }
 }

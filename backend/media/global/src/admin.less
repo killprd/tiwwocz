@@ -5,11 +5,37 @@
 @import url(components/helper-margin.less);
 @import url(components/animation.less);
 @import url(components/widget.less);
+@import url(examples/profile.less);
 @import url(layouts/site-menubar-unfold.less);
 
 
 .block_admin{
 	&.container-fluid{
 		padding: 0px 0 0 0;
+	}
+}
+#site-navbar-collapse{
+	&.navbar{
+		margin:0px;
+		box-shadow:none !important;
+		border:0px;
+	}
+}
+.page-content{
+	.panel {
+	    border-width: 0;
+	    margin-bottom: 30px;
+	    position: relative;
+	    background-color: #fff;
+	    border: 1px solid transparent;
+	    border-radius: 4px;
+	    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+	    margin-bottom: 22px;
+	}
+}
+.avatar.avatar-lg{
+	width: 150px;
+	img{
+		border-radius: 50%;
 	}
 }
