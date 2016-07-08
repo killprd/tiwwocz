@@ -8,6 +8,7 @@ use \yii\helpers\FileHelper;
 use \yii\helpers\Url;
 use \backend\helpers\GD;
 
+
 class Image
 {
     public static function upload(UploadedFile $fileInstance, $dir = '', $resizeWidth = null, $resizeHeight = null, $resizeCrop = false)

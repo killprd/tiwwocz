@@ -5,7 +5,7 @@ $config = [
     'bootstrap' => [
         [
             'class' => 'frontend\components\LanguageSelector',
-            'supportedLanguages' => [ 'cs_CZ','en_US', 'ru_RU'],
+            'supportedLanguages' => [ 'cs','en', 'ru'],
         ],
     ],
     'aliases' => [

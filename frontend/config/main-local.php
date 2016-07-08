@@ -7,8 +7,7 @@ $config = [
             'supportedLanguages' => [ 'cs_CZ','cs','en_EN','en', 'ru_RU','ru'],
         ],
     ],*/
-
-    'aliases' => [
+        'aliases' => [
         '@home' => 'http://tiwwo.dev',
         '@bar' => 'http://www.tiwwo.cz',
         '@lang' => 'site/getlanguage/',
@@ -18,7 +17,8 @@ $config = [
             'baseUrl' => '',
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'tFcgQxgiDbFi8-Q_gUXC3hj_s32LAAMs',
-        ],
+        ],        
+
         
         'user' => [
             'identityClass' => 'common\models\User',
@@ -37,7 +37,7 @@ $config = [
             'ignoreLanguageUrlPatterns' => [
                 '#^assets/#' => '#^assets/#',
             ],
-            'rules' => [       
+            'rules' => [  
                 '<module:\w+>/<language:\w+>/<controller>/<action>' => 'admin/site/<action>',
                 '<language:\w+>/<controller>/<action:(login|logout|about)>' => 'site/<action>',
                 '<module:\w+>/<language:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',

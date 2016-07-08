@@ -11,7 +11,11 @@ use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
-
+use yii\helpers\FileHelper;
+use yii\imagine\Image;
+use yii\helpers\Json;
+use Imagine\Image\Box;
+use Imagine\Image\Point;
 /**
  * This is the model class for table "soft_users".
  *
@@ -44,7 +48,7 @@ class Users extends \yii\db\ActiveRecord implements IdentityInterface
     /**
      * @inheritdoc
      */
-    public $data = [];
+    public $data = [];   
     public static function tableName()
     {
         return 'soft_users';
@@ -63,12 +67,18 @@ class Users extends \yii\db\ActiveRecord implements IdentityInterface
             ['role', 'default', 'value' => 'guide'],
             ['lang', 'default', 'value' => Yii::$app->language],
             [['lang'], 'string', 'max' => 64],
+            [
+                'image', 
+                'image', 
+                'extensions' => ['jpg', 'jpeg', 'png', 'gif'],
+                'mimeTypes' => ['image/jpeg', 'image/pjpeg', 'image/png', 'image/gif'],
+            ],
             ['image','image','skipOnEmpty' => true],
             [['username','name', 'surname', 'email','telephone','adress'],'safe','on'=>'insert'],
             [['username','name', 'surname', 'email','telephone','adress'], 'required', 'on' => 'update'],
             [['username', 'password', 'salt', 'name', 'surname', 'email', 'adress', 'dic', 'company_name'], 'string', 'max' => 255],
             [['telephone', 'ic'], 'string', 'max' => 128],
-            [['password','lang', 'salt', 'role', 'adress', 'zip', 'ic', 'dic', 'company_name','old_id'],'safe']
+            [['password','lang', 'salt', 'role', 'adress', 'zip', 'ic', 'dic', 'company_name','old_id','datebirth', 'crop_info','short_text'],'safe']
         ];
     }
 
@@ -97,6 +107,7 @@ class Users extends \yii\db\ActiveRecord implements IdentityInterface
             'company_name' => Yii::t('app', 'Company Name'),
             'image' => Yii::t('app', 'Image'),
             'method_activate' => Yii::t('app', 'Method Activate'),
+            'short_text' => Yii::t('app', 'Short description'),
         ];
     }
 
@@ -352,6 +363,7 @@ class Users extends \yii\db\ActiveRecord implements IdentityInterface
 
     public function beforeSave($insert)
     {
+        
         if (parent::beforeSave($insert)) {
            
             if($this->password!=''){
@@ -372,6 +384,90 @@ class Users extends \yii\db\ActiveRecord implements IdentityInterface
     }
 
 
+
+    public function afterSave($insert, $changedAttributes)
+    {
+            
+            
+            if(isset($this->image->tempName) && $this->image->tempName!=''){
+                $image = Image::getImagine()->open($this->image->tempName);
+
+                // rendering information about crop of ONE option 
+                $cropInfo = Json::decode($this->crop_info)[0];
+                $cropInfo['dWidth'] = (int)$cropInfo['dWidth']; //new width image
+                $cropInfo['dHeight'] = (int)$cropInfo['dHeight']; //new height image
+                $cropInfo['x'] = $cropInfo['x']; 
+                $cropInfo['y'] = $cropInfo['y'];
+
+                //delete old images
+                $oldImages = FileHelper::findFiles(Yii::getAlias('@frontend/web/uploads/profile/thumbs'), [
+                    'only' => [
+                        $this->id . '.*',
+                        'thumb_' . $this->id . '.*',
+                    ], 
+                ]);
+                for ($i = 0; $i != count($oldImages); $i++) {
+                    @unlink($oldImages[$i]);
+                }
+
+                //saving thumbnail
+                $newSizeThumb = new Box($cropInfo['dWidth'], $cropInfo['dHeight']);
+                $cropSizeThumb = new Box(200, 200); //frame size of crop
+                $cropPointThumb = new Point($cropInfo['x'], $cropInfo['y']);
+                
+                $pathThumbImage = Yii::getAlias('@frontend/web/uploads/profile/thumbs') 
+                    . '/thumb_' 
+                    . $this->id 
+                    . '.' 
+                    . $this->image->getExtension();  
+
+                $image->resize($newSizeThumb)
+                    ->crop($cropPointThumb, $cropSizeThumb)
+                    ->save($pathThumbImage, ['quality' => 100]);
+
+                //saving original
+                $image ='uploads/profile/' 
+                    . $this->id 
+                    . '.' 
+                    . $this->image->getExtension();  
+
+                $crop_info ='uploads/profile/thumbs/thumb_' 
+                    . $this->id 
+                    . '.' 
+                    . $this->image->getExtension();
+                
+
+
+                 self::updatedata($image, $crop_info,$this->id);
+                     
+                
+
+                
+
+
+                $this->image->saveAs(
+                    Yii::getAlias('@frontend/web/uploads/profile') 
+                    . '/' 
+                    . $this->id 
+                    . '.' 
+                    . $this->image->getExtension()
+                );
+
+
+
+               
+            }
+        
+    }
+
+
+
+
+    private static function updatedata($image,$thumb,$id){
+        if($image!=''){
+            \Yii::$app->db->createCommand("UPDATE soft_users SET image = '".$image."', crop_info = '".$thumb."' WHERE user_id = '".$id."'")->query();
+        }
+    }   
 
 
 
