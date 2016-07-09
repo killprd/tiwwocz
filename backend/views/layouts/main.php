@@ -8,6 +8,7 @@ use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 use backend\assets\AppAsset;
 use common\widgets\Alert;
+use frontend\helpers\Languages as Langmenu;
 $asset = AppAsset::register($this);
 
 ?>
@@ -101,8 +102,8 @@ $asset = AppAsset::register($this);
                 <ul class="site-menu-sub">
                     
                     <li class="site-menu-item">
-                        <a class="animsition-link" href="../pages/faq.html">
-                            <span class="site-menu-title"><?= Yii::t('app','Set Up Your Profile')?></span>
+                        <a class="animsition-link" href="../pages/index">
+                            <span class="site-menu-title"><?= Yii::t('app','Create / Edit your pages')?></span>
                         </a>
                     </li>
                     <li class="site-menu-item">
@@ -126,15 +127,13 @@ $asset = AppAsset::register($this);
                 </a>
                     
                 <ul class="site-menu-sub">
-                    <li class="site-menu-item">
-                        <a class="animsition-link" href="../pages/faq.html">
-                            <span class="site-menu-title"><?= Yii::t('app','About page')?></span>
-                        </a>
+                    <li class="site-menu-item">                        
+                        <?= Html::a('<span class="site-menu-title">'.Yii::t('app','About page').'</span>', ['pages/about','language'=>Langmenu::getBack(Yii::$app->language)], ['class' => 'animsition-link']) ?>
+                        
                     </li>
                     <li class="site-menu-item">
-                        <a class="animsition-link" href="../pages/gallery.html">
-                            <span class="site-menu-title"><?= Yii::t('app','Contact')?></span>
-                        </a>
+                        
+                        <?= Html::a('<span class="site-menu-title">'.Yii::t('app','Contact page').'</span>', ['pages/contact','language'=>Langmenu::getBack(Yii::$app->language)], ['class' => 'animsition-link']) ?>
                     </li>
                     
                 </ul>
@@ -148,10 +147,10 @@ $asset = AppAsset::register($this);
                 </a>
                     
                 <ul class="site-menu-sub">
+
                     <li class="site-menu-item">
-                        <a class="animsition-link" href="../pages/faq.html">
-                            <span class="site-menu-title"><?= Yii::t('app','Excursions for 1 day')?></span>
-                        </a>
+                        <?= Html::a('<span class="site-menu-title">'.Yii::t('app','List your services').'</span>', ['services/index','language'=>Langmenu::getBack(Yii::$app->language)], ['class' => 'animsition-link']) ?>
+                       
                     </li>
                     <li class="site-menu-item">
                         <a class="animsition-link" href="../pages/gallery.html">

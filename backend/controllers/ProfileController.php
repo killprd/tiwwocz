@@ -93,13 +93,8 @@ class ProfileController extends Controller
 
             
             if (isset($_FILES)) {
-                                /*
-                $model->image = UploadedFile::getInstance($model, 'image');
-                if ($model->image && $model->validate(['image'])) {
-                    $model->image = Image::upload($model->image, 'profile');
-                } else {                   
-                    $model->image = $image;
-                }*/
+                               
+               
                  $model->image = UploadedFile::getInstance($model, 'image');
 
                 if ($model->image && $model->validate(['image'])) {
@@ -124,7 +119,6 @@ class ProfileController extends Controller
                         ];
                      return $this->renderAjax('_profileForm',['model'=>$model]);
                     Yii::$app->end();
-                    //print_r(Yii::$app->request->post());exit;
                    
                     
                 }
