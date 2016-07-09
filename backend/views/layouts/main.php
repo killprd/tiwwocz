@@ -15,6 +15,7 @@ $asset = AppAsset::register($this);
 
 
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
+
 <body class="site-menubar-unfold site-menubar-keep">
 <div class="block_admin container-fluid ">      
    

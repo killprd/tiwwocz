@@ -50,11 +50,18 @@ class SoftServices extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'name', 'price_kind', 'type_price', 'service_type', 'category', 'count_members', 'count_members_from', 'count_members_to', 'days', 'length_time', 'price','lang','title'], 'required'],
+            [['user_id', 'price_kind', 'type_price', 'service_type', 'price','lang','title'], 'required'],
             [['service_id', 'status', 'slug', 'currency', 'included_in_price', 'start_place', 'end_place', 'start_time', 'end_time', 'noincluded_in_price','image','needs','transport'], 'safe'],
             [['service_id', 'status', 'user_id', 'category'], 'integer'],
-            [['length_time', 'start_time', 'end_time'], 'safe'],
+            [['length_time', 'start_time', 'end_time','category', 'count_members', 'count_members_from', 'count_members_to', 'days','name','text'], 'safe'],
             [['price'], 'number'],
+            [
+                'image', 
+                'image', 
+                'extensions' => ['jpg', 'jpeg', 'png', 'gif'],
+                'mimeTypes' => ['image/jpeg', 'image/pjpeg', 'image/png', 'image/gif'],
+            ],
+            ['image','image','skipOnEmpty' => true],
             [['included_in_price', 'noincluded_in_price'], 'string'],
             [['slug', 'count_members', 'count_members_from', 'count_members_to', 'days', 'currency'], 'string', 'max' => 128],
             [['name', 'service_type', 'start_place', 'end_place'], 'string', 'max' => 255],

@@ -15,6 +15,8 @@ use backend\helpers\Languages;
 use backend\helpers\Data;
 use kartik\time\TimePicker;
 use kartik\file\FileInput;
+use backend\helpers\Image;
+use yii\widgets\Pjax;
 $user_id = Yii::$app->user->identity->user_id;
 
 $asset = AppAsset::register($this);
@@ -29,9 +31,24 @@ $this->title = 'tiwwo';
     </div>
     <div class="page-content">
       <div class="panel">        
-        <div class="panel">
-            <div class=" panel-body"> 
-                <br/>               
+        
+           <div class="panel">
+                <div class=" panel-body nav-tabs-animate nav-tabs-horizontal">
+                    
+
+
+                    <ul role="tablist" data-plugin="nav-tabs" class="nav nav-tabs nav-tabs-line">
+                        
+                        <li role="presentation" class="active"><a role="tab" aria-controls="edit" href="#edit" data-toggle="tab"><?=Yii::t('app','Edit service')?></a></li>
+                        <li role="presentation" class=""><a role="tab" aria-controls="gallery" href="#gallery" data-toggle="tab"><?=Yii::t('app','Gallery service')?></a></li>                                 
+                    </ul>
+                    
+
+
+
+                    <div class="tab-content">
+                        <div role="tabpanel" id="edit" class="tab-pane active  animation-slide-left"> 
+                        <br/>               
            
 
                           <?php
@@ -58,12 +75,25 @@ $this->title = 'tiwwo';
                                     <?= $form->field($model, 'title')->textInput() ?>
                                 </div>
                                 <div class="col-sm-6">
+
+                                  <?php if($model->image!='') : ?>
+                                       
+                                            <img src="<?= '../../../../../'.$model->image?>" class="img-responsive img-thumbnail"/>
+                                     
+                                       <div class="clearfix"></div>
+                                            <a href="<?= Url::to(['services/clear-image', 'id' => $model->primaryKey]) ?>" class="" data-pjax="0" title="<?= Yii::t('app', 'Clear image')?>">
+                                                <i class="icon wb-trash"></i><?= Yii::t('app', 'Clear image')?>
+                                            </a>
+                                            <div class="clearfix"></div>
+
+                                    <?php else: ?>
+                                    
                                     <?=
                                     '<label class="control-label">Add Attachments</label>'.
                                      FileInput::widget([
                                         'model' => $model,
                                         'attribute' => 'image',
-                                        'options' => ['multiple' => false,'accept' => 'image/*'],
+                                        'options' => ['multiple' => true,'accept' => 'image/*'],
                                         'pluginOptions' => [
                                             //'uploadUrl' => Url::to(['/site/file-upload']),
                                             'showPreview' => true,
@@ -74,6 +104,7 @@ $this->title = 'tiwwo';
 
                                     ]);
                                     ?>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                             <hr/>
@@ -211,28 +242,13 @@ $this->title = 'tiwwo';
                             <div class="row">
                                 <div class="col-sm-12">
                                     <?= $form->field($model, 'text')->widget(CKEditor::className(), [
-                                        'options' => ['rows' => 25,'id'=>'text'],
+                                        'options' => ['rows' => 25],
                                         'preset' => 'basic',
-                                        'id'=>'text-de'
                                     ])->label(Yii::t('app','Desctiprion')) ?>
                                 </div>
-
-
-                               
-
-
                                
 
                             </div>
-
-                       
-
-
-                            
-
-
-
-
                             
 
 
@@ -241,13 +257,72 @@ $this->title = 'tiwwo';
                           <?php ActiveForm::end() ?>
                  
 
+                        </div>
 
+                        <div role="tabpanel" id="gallery" class="tab-pane  animation-slide-left">
+                        <br>
+                        <?php $form1 = ActiveForm::begin([
+                                'options'=>['enctype'=>'multipart/form-data','action'=>'../../../admin/services/gallery'] // important
+                            ]);
+                            ?>
+                                    <?=
+                                    
+                                     $form->field($model_gallery, 'file_name')->widget(FileInput::classname(),[
+
+                                        'name' => 'file_name',
+                                        'options' => ['multiple' => true,'accept' => 'image/*','id'=>'file_name',],
+                                        'id'=>'file_name',
+                                        'pluginOptions' => [
+                                            'uploadUrl' => Url::to(['/services/gallery']),
+                                            'language'=>'cs',
+                                            'id'=>'file_name',
+                                            'uploadExtraData' => [
+                                                'service_id' => $model->service_id,
+                                            ],
+                                            'uploadAsync'=> true,
+                                           
+                                        ],
+
+                                    ]);
+                                    ?>
+                                    <?= $form->field($model_gallery, 'service_id')->hiddenInput(['value'=>$model->service_id,'id'=>'service_id'])->label(false) ?>
+                           <?php ActiveForm::end() ?>
+
+
+                           <br/>
+                           <br/>
+                           <br/>
+                           <?php  Pjax::begin(['enablePushState' => false,'id'=>'_gallery_ajax','timeout'=>0]); ?> 
+                                    <?= $this->render('_gallery_ajax',['data'=>$gallery]);?>
+                            <?php Pjax::end(); ?>
+                           
+
+                        </div>
+
+                    </div>
 
 
 
 
 
                 </div>
+                
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+
             </div>
         </div>
       </div>
@@ -257,35 +332,31 @@ $this->title = 'tiwwo';
   <!-- Footer -->
   <?php
 
-/*
+
  
 $this->registerJs("
-    
-    $(document).on('submit','form#service-form-create',function(e){
-        e.preventDefault();        
-        var form = new FormData( this );       
-
-        $.ajax({
-            url: $(this).attr('action'),
+        function galleryRefresh(){
+            var service_id = $('#service_id').val();
+            $.ajax({
+            url: '/admin/".Yii::$app->language."/services/gallery-refresh',
             type: 'post',
-            data: form,
-            processData: false,
-            contentType: false,
-            beforeSend: function(data){
-                 $('div.spin').toggleClass('active');
-                 $('#ProfileRefresh').html('');
-            },
+            data: {item:service_id},            
             success: function(data) {
-                $('div.spin').toggleClass('active');
-                $('#ProfileRefresh').html(data);
-
-                 
+                
+                $('#_gallery_ajax').html(data);
+                 return false;
             }
         });
-
-        return false;
-    });
-
+        }
+        $( document ).ready(function() {
+            console.log($('#file_name').val());
+            $('#file_name').on('fileuploaded', function(event, data) {
+                var formdata = data.form, files = data.files, 
+                    extradata = data.extra, responsedata = data.response;
+                    galleryRefresh();
+            });
+        });
+   
 
     "
-);*/?>
+);?>

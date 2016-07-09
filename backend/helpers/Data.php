@@ -51,5 +51,20 @@ class Data
     }
 
 
+    public static function getServiceType(){
+        $kind = [
+            ['id'=>'1','name'=>Yii::t('app','Excursions for 1 day')],
+            ['id'=>'2','name'=>Yii::t('app','Excursions for 2+ days')],
+            ['id'=>'3','name'=>Yii::t('app','Private Tours')],
+            ['id'=>'4','name'=>Yii::t('app','Private Transfers')],
+            ['id'=>'5','name'=>Yii::t('app','Active Tourism')],
+            ['id'=>'6','name'=>Yii::t('app','Health Tourism')],
+            ['id'=>'7','name'=>Yii::t('app','Other services')],
+
+        ];
+        return $kind;
+    }
+
+
 
 }

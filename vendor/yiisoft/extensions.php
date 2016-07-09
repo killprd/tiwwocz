@@ -201,15 +201,6 @@ return array (
       '@kartik/growl' => $vendorDir . '/kartik-v/yii2-widget-growl',
     ),
   ),
-  'kartik-v/yii2-widget-fileinput' => 
-  array (
-    'name' => 'kartik-v/yii2-widget-fileinput',
-    'version' => '1.0.5.0',
-    'alias' => 
-    array (
-      '@kartik/file' => $vendorDir . '/kartik-v/yii2-widget-fileinput',
-    ),
-  ),
   'kartik-v/yii2-widget-depdrop' => 
   array (
     'name' => 'kartik-v/yii2-widget-depdrop',
@@ -334,6 +325,33 @@ return array (
     'alias' => 
     array (
       '@kartik/editable' => $vendorDir . '/kartik-v/yii2-editable',
+    ),
+  ),
+  '2amigos/yii2-ckeditor' => 
+  array (
+    'name' => '2amigos/yii2-ckeditor',
+    'version' => '4.2',
+    'alias' => 
+    array (
+      '@dosamigos/ckeditor' => $vendorDir . '/2amigos/yii2-ckeditor',
+    ),
+  ),
+  'kartik-v/yii2-mpdf' => 
+  array (
+    'name' => 'kartik-v/yii2-mpdf',
+    'version' => '1.0.0.0',
+    'alias' => 
+    array (
+      '@kartik/mpdf' => $vendorDir . '/kartik-v/yii2-mpdf',
+    ),
+  ),
+  'kartik-v/yii2-widget-fileinput' => 
+  array (
+    'name' => 'kartik-v/yii2-widget-fileinput',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@kartik/file' => $vendorDir . '/kartik-v/yii2-widget-fileinput',
     ),
   ),
 );
